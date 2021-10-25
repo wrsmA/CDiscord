@@ -33,12 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="config\App.config" />
+    <None Include="config\packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Debug.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="src\Debug.cs" />
+    <Compile Include="src\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Discord.Net.Commands, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">

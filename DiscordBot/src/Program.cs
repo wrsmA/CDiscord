@@ -12,13 +12,13 @@ namespace DiscordBot
 {
     class Program
     {
-        public const string TOKEN = "OTAyMDgwNzUyMTgxNzE5MDQw.YXZOKw.tcEQx0ebHFINaBZ068q9euv_vrQ";
         private DiscordSocketClient _client;
 
         // EntryPoint
         static void Main(string[] args) => new Program().MainAsync().GetAwaiter().GetResult();
         public async Task MainAsync()
         {
+            string token = Environment.GetEnvironmentVariable("DISCORD_BOT_TOKEN");
             _client = new DiscordSocketClient(new DiscordSocketConfig
             {
                 LogLevel = LogSeverity.Info,
@@ -26,7 +26,7 @@ namespace DiscordBot
 
             _client.Log += Log;
 
-            await _client.LoginAsync(TokenType.Bot, TOKEN);
+            await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
 
             await Task.Delay(-1);
